@@ -1,5 +1,6 @@
 ﻿namespace PruebaTecnicaPlatec.Models
 {
+
     public class Product
     {
 
