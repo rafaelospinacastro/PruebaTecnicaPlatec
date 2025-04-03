@@ -4,7 +4,6 @@ using PruebaTecnicaPlatec.Models;
 
 namespace DataBaseInMemory.DataContext
 {
-    
         public class AppDbContext : DbContext
         {
             protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
