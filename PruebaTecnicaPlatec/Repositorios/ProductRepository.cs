@@ -63,6 +63,10 @@ namespace PruebaTecnicaPlatec.Repositorios
             
                 try
                 {
+                    if (id == 0)
+                    {
+                        return "Error: El id es Cero";
+                    }
                     var product = context.Products.Where(x => x.Id == id);
                     context.Remove(product);
                     //context.SaveChanges();                
@@ -70,7 +74,7 @@ namespace PruebaTecnicaPlatec.Repositorios
                 }
                 catch (Exception ex)
                 {
-                    return ex.Message;
+                    return "Error: " + ex.Message;
                 }
             }
         }
@@ -101,15 +105,15 @@ namespace PruebaTecnicaPlatec.Repositorios
                     }
                     if (product.Name.Trim().Length == 0)
                     {
-                        return "El producto no tiene nombre";
+                        return "Error: El producto no tiene nombre";
                     }
                     if (product.Price == 0)
                     {
-                        return "El precio es Cero";
+                        return "Error: El precio es Cero";
                     }
                     if (product.Quantity == 0)
                     {
-                        return "La cantidad es Cero";
+                        return "Error: La cantidad es Cero";
                     }
                     context.Add(product);
                     context.SaveChanges();
@@ -117,7 +121,7 @@ namespace PruebaTecnicaPlatec.Repositorios
                 }
                 catch (Exception ex)
                 {
-                    return ex.Message;
+                    return "Error: " + ex.Message;
                 }
             }
         }
@@ -134,7 +138,7 @@ namespace PruebaTecnicaPlatec.Repositorios
                 }
                 catch (Exception ex)
                 {
-                    return ex.Message;
+                    return "Error: " + ex.Message;
                 }
             }
         }
